@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="profile">
+
+<h1>{{page.title}}</h1>
+<p>
+  {% if page.photo %}
+    {% assign photo_url = page.photo %}
+  {% else %}
+    {% assign photo_url = "https://lh5.googleusercontent.com/-f9NnDNOP9ug/AAAAAAAAAAI/AAAAAAAAAJM/T9FAa21t57g/photo.jpg" %}
+  {% endif %}
+  <img src="{{photo_url}}" class="profile-img">
+</p>
+<p class="profile-bio">{{page.bio}}</p>
+
+</article>

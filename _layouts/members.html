@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+<hr/>
+  <p id="top" style="text-align:left">
+  <a class="profile-category" href="#faculty">Faculty</a>
+  <a class="profile-category" href="#student-leadership">Student Leadership</a>
+  <a class="profile-category" href="#mentors">Mentors</a>
+  <a class="profile-category" href="#alumnimentors">Alumni Mentors</a>
+  <a class="profile-category" href="#current">Current Members</a>
+  <a class="profile-category" href="#alumni">Alumni</a>
+  </p>
+<hr/>
+
+  <div class="post-content">
+    <h1 id="faculty"><b> Faculty </b></h1>
+
+    {% assign memberRole = "Advisor" %}
+    {% include inline-profile.html %}
+
+    <h1 id="student-leadership"><b> Student Leadership </b></h1>
+
+    {% assign memberRole = "Leader" %}
+    {% include inline-profile.html %}
+
+    <h1 id="mentors"><b> Mentors </b></h1>
+
+    {% assign memberRole = "Mentor" %}
+    {% include inline-profile.html %}
+
+    <h1 id="current"><b> Current Members </b> </h1>
+
+    {% assign memberRole = "Student" %}
+    {% include inline-profile.html %}
+
+    <h1 id="alumni"><b> Alumni </b> </h1>
+
+    {% assign memberRole = "Inactive" %}
+    {% include inline-profile.html %}
+
+    {{ content }}
+  </div>
+
+</article>

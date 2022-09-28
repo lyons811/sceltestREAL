@@ -1,0 +1,36 @@
+<header>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">SCEL</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false">
+          <ul class="nav navbar-nav navbar-right">
+            {% for link in site.data.nav %}
+            {% if link.subcategories != null %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{link.title}} <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                {% for sublink in link.subcategories %}
+                <li><a href="{{sublink.href}}">{{sublink.subtitle}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            {% else %}
+            <li><a href="{{link.href}}">{{ link.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+
+        </ul>
+    </div>
+</header>

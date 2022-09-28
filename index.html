@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <div class="row" style="padding-bottom:50px">
+    <div class="col-md-8">
+        {% include slider.html %}
+    </div>
+    <div class="col-md-4">
+        <h3> Smart Campus Energy Lab </h3>
+        <p>
+        The Smart Campus Energy Lab is led by
+        <a href="http://www.ee.hawaii.edu/~kuh/info.html" target="_blank">Dr. Anthony Kuh</a>, a professor of Electrical
+        Engineering at the University of Hawaii at Manoa.
+        </p>
+
+        <p>
+        Our goal is to support efforts in creating new technologies, techniques and products related
+        to sustainability or renewable energy. We are primarily a student-led lab that strives to achieve
+        this by promoting teamwork, communication, and lifelong learning.
+        </p>
+
+        <h3>Recent News</h3>
+
+        <table class="post-list">
+          {% for post in site.posts %}
+          <tr>
+            <td style="padding-right:20px"><span >{{ post.date | date: "%b %-d, %Y" }}</span></td>
+            <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+
+        <br />
+        <a href="/news/">View All News</a>
+        <hr />
+
+        <img src="http://www5.pbrc.hawaii.edu/logos/manoaseal_transparent.png" style="height:100px"></img>
+        <img src="http://www.ieeecss.org/CAB/conferences/cdc2012/images/manoa_uni.png" style="width:200px"></img>
+    </div>
+  </div>
+
+
+</div>

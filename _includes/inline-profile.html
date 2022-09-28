@@ -1,0 +1,37 @@
+{% for member in site.data.members %}
+{% if member.role == memberRole %}
+
+  <div class="profile-card">
+  <h3>{{member.name}} <small>{{ member.position }}</small></h3>
+    <strong>Major:</strong> {{member.major }} {% if member.track %} - {{ member.track }} track {% endif %} <br />
+    <!-- <strong>Interests:</strong> {{member.interests | join: ", "}} <br /> -->
+    <div class="profile-wrapper">
+        <div class="profile-content">
+          <p>{{member.bio}}</p>
+        </div>
+        <div class="profile-sidebar">
+          {% if member.photo %}
+            {% if member.name == "John William Carpenter" %}
+          <img src="https://lab.scel-hawaii.org/uploads/user/avatar/john_carpenter.jpg" class="profile-img"></img>
+            {% else %}
+          <img src="https://lab.scel-hawaii.org/uploads/user/avatar/{{member.first_name | url_encode | downcase | replace: "+", "%20" }}_{{member.last_name | downcase}}.jpg" class="profile-img"></img>
+            {% endif %}
+          {% else %}
+          <img src="https://lh5.googleusercontent.com/-f9NnDNOP9ug/AAAAAAAAAAI/AAAAAAAAAJM/T9FAa21t57g/photo.jpg"
+              class="profile-img"></img>
+          {% endif %}
+        </div>
+    <ul class="profile-info">
+      <li>
+      {% if member.linkedin != 0 %}<span class="profile-link"><a href="{{member.linkedin}}" target="_blank">LinkedIn Profile</a></span></a> {% endif %}
+      {% if member.website %}<span class="profile-link"><a href="{{member.website}}" target="_blank">Website</a> 
+          {% endif %}</span>
+      </li>
+    </ul>
+        <div class="profile-cleared"></div>
+    </div>
+
+  </div>
+
+{% endif %}
+{% endfor %}

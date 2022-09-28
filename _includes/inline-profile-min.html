@@ -1,0 +1,9 @@
+<p>
+{% assign members_filtered = site.data.members | sort:"name" %}
+{% for member in members_filtered %}
+  {% if member.role == memberRole %}
+    {% assign filename = member.name | downcase | replace:" ", "-" | append: ".html" %}
+    <a href="{{ "/people/" | append: filename}}">{{member.name}}</a><br />
+  {% endif %}
+{% endfor %}
+</p>

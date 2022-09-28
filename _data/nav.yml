@@ -1,0 +1,21 @@
+# Navigation
+
+- title: "Home"
+  href: "/"
+
+- title: "Research"
+  href: "/research"
+
+- title: "Students"
+  href: "/students"
+
+- title: "Members"
+  href: "/members"
+
+- title: "Sponsors"
+  href: "/sponsors"
+
+- title: "Contact"
+  href: "/contact"
+
+# Note: add publications later when we have that more organized.

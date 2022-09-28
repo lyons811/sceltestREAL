@@ -1,0 +1,9 @@
+  <div class="flexslider" style="padding-top:20px">
+    <ul class="slides">
+      {% for img in site.data.slider %}
+        <li>
+          <img src="{{img.src}}"></img>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
